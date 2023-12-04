@@ -1,3 +1,4 @@
+const randomWords = require('random-words');
 cc.Class({
   extends: cc.Component,
 
@@ -8,9 +9,8 @@ cc.Class({
   },
 
   onLoad() {
-    this.paragraph =
-      'army beautiful became if actually army beautiful became if actually army beautiful became if actually army beautiful became if actually army beautiful became if actually army beautiful became if actually';
-    this.words = this.paragraph.split(' ');
+    this.words = randomWords(25);
+    this.paragraph = this.words.join(' ');
     this.wordLabels = [];
     for (let word of this.words) {
       this.generateNewLabel(word);
@@ -18,9 +18,6 @@ cc.Class({
     this.curWordIndex = 0;
     this.curWord = this.words[this.curWordIndex];
     this.trueWords = 0;
-    // curWord
-    // if user press space => check input vs curWord
-    // if true => ++trueWords, curWord to next word
   },
 
   start() {},
@@ -47,6 +44,10 @@ cc.Class({
     newLabel.getComponent(cc.Label).string = text;
     this.paragraphLayout.node.addChild(newLabel);
     this.wordLabels.push(newLabel);
+  },
+  checkEndGame() {
+    if (this.timer <= 0 || this.curWordIndex === this.words.length) {
+    }
   },
   // update (dt) {},
 });
