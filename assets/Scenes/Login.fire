@@ -2633,8 +2633,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 1,
-      "y": 1,
+      "x": 1.6,
+      "y": 1.6,
       "z": 1
     },
     "_eulerAngles": {
@@ -2788,7 +2788,7 @@
     "_useOriginalSize": false,
     "_string": "Play",
     "_N$string": "Play",
-    "_fontSize": 20,
+    "_fontSize": 24,
     "_lineHeight": 40,
     "_enableWrapText": false,
     "_N$file": null,
