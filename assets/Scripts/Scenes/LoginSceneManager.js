@@ -16,15 +16,17 @@ cc.Class({
     if (this.usernameInput.string.trim()) {
       this.userData.username = this.usernameInput.string;
       this.userData.avatar = this.avatarImg.spriteFrame;
-      console.log(this.userData)
       this.submitBtn.interactable = true;
     } else this.submitBtn.interactable = false;
   },
+  onPickAvatar() {
+    this.userData.avatar = this.avatarImg.spriteFrame;
+  },
+
   onPlay() {
-    const data = this.userData
+    const data = this.userData;
     cc.director.loadScene('GamePlay', function () {
       cc.director.getScene().emit('userData', data);
     });
   },
-  // update (dt) {},
 });

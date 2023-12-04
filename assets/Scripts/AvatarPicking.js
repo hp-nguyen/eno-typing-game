@@ -5,10 +5,7 @@ cc.Class({
     avatarImg: cc.Sprite,
   },
 
-  // onLoad () {},
-  start() {},
   onPickAvatar() {
     this.avatarImg.spriteFrame = this.node.getComponent(cc.Sprite).spriteFrame;
   },
-  // update (dt) {},
 });
